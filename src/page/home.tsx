@@ -1,12 +1,9 @@
-import React from "react";
-import "./home.css";
+import "../styles/home.css";
 import reactLogo from "../assets/react.svg";
 import viteLogo from "../../public/vite.svg";
 import { Link } from "react-router-dom";
-import { Context } from "../Provider/useContextProvider";
 
 export default function Home() {
-  const context = React.useContext(Context);
   return (
     <>
       <div>
@@ -19,11 +16,17 @@ export default function Home() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => context?.setCount((prev) => prev + 1)}>
-          count is {context.count}
-        </button>
+        <p>useContext</p>
+        <Link to="/useContextHome">useContextHome</Link>
       </div>
-      <Link to="/edit">Editページ</Link>
+      <div className="card">
+        <p>useContext</p>
+        <Link to="/reduxHome">ReduxHome</Link>
+      </div>
+      <div className="card">
+        <p>useContext</p>
+        <Link to="/useSyncExternalStoreHome">オレオレStoreHome</Link>
+      </div>
     </>
   );
 }
